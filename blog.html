@@ -1,295 +1,77 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="bpaas-design-system" content="brutalist-avantgarde">
-    <meta name="bpaas-design-theme" content="kr-neon-void">
-    <meta name="description" content="마곡 유흥 꿀팁 블로그: 진짜 야들만 아는 마곡 밤문화 핫플레이스, 가격 비교, 노필터 팁. 브로들을 위한 직설 리뷰 & 시크릿 맵. 010-6279-0862">
-    <meta name="keywords" content="마곡 유흥, 마곡 블로그, 마곡 밤문화, 마곡 술집, 마곡 꿀팁, 마곡 유흥정보, 마곡 립카페, 마곡 룸싸롱, 마곡 유흥주점, 홍대입구 유흥, 강서구 유흥">
-    <meta name="author" content="마곡유흥꿀팁">
-    <link rel="canonical" href="https://t3b05-mg-night-tip-1.vercel.app/">
-    <!-- Open Graph -->
-    <meta property="og:title" content="마곡 유흥 꿀팁 블로그 | 브로들을 위한 진짜 밤문화 가이드">
-    <meta property="og:description" content="린치핀? No. 진짜 야들만 아는 마곡 유흥 꿀팁 대방출. 가격, 코스, 추천 장소 직설 리뷰. 클릭하지 않으면 손해">
-    <meta property="og:type" content="article">
-    <meta property="og:url" content="https://t3b05-mg-night-tip-1.vercel.app/blog">
-    <meta property="og:image" content="https://t3b05-mg-night-tip-1.vercel.app/og-image-blog.jpg">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:locale" content="ko_KR">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="마곡 유흥 꿀팁 블로그 | 브로들을 위한 진짜 밤문화 가이드">
-    <meta name="twitter:description" content="마곡 밤문화 진짜 꿀팁 모음. 가격비교, 코스추천, 무료 꿀정보까지. 지금 확인">
-    <title>블로그 | 마곡 유흥 꿀팁</title>
-    <style>
-        /* RESET & BASE */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        html {
-            scroll-behavior: smooth;
-            background: #0a0a0a;
-            color: #e0e0e0;
-            font-family: 'Courier New', Courier, monospace;
-        }
-        body {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            line-height: 1.6;
-            background: #0a0a0a;
-        }
-        a {
-            color: #ff2a6d;
-            text-decoration: none;
-            border-bottom: 2px solid transparent;
-            transition: 0.2s;
-        }
-        a:hover {
-            color: #05d9e8;
-            border-bottom-color: #05d9e8;
-        }
-        ul {
-            list-style: none;
-            padding: 0;
-        }
-        /* TYPOGRAPHY */
-        h1 {
-            font-size: 2.2rem;
-            font-weight: 700;
-            color: #ff2a6d;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 1rem;
-            text-shadow: 0 0 10px #ff2a6d66;
-        }
-        h2 {
-            font-size: 1.6rem;
-            font-weight: 600;
-            color: #05d9e8;
-            margin-top: 2rem;
-            margin-bottom: 0.8rem;
-            border-left: 4px solid #ff2a6d;
-            padding-left: 0.8rem;
-        }
-        h3 {
-            font-size: 1.3rem;
-            font-weight: 600;
-            color: #e0e0e0;
-            margin-top: 1.5rem;
-            margin-bottom: 0.6rem;
-        }
-        p, li, .text-body {
-            font-size: 1rem;
-            color: #b0b0b0;
-            margin-bottom: 1rem;
-        }
-        .text-small {
-            font-size: 0.8rem;
-            color: #888;
-            letter-spacing: 0.5px;
-        }
-        /* LAYOUT */
-        .full-bleed {
-            width: 100%;
-            padding: 0 16px;
-        }
-        .container {
-            max-width: 960px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        .section-gap {
-            padding: 3rem 0;
-        }
-        /* BRUTALIST BORDERS & ACCENTS */
-        .brutal-border {
-            border: 3px solid #ff2a6d;
-            box-shadow: 8px 8px 0px #05d9e8;
-            padding: 1.5rem;
-            background: #111;
-            margin-bottom: 2rem;
-        }
-        .brutal-border::before {
-            content: '⚡';
-            display: block;
-            font-size: 2rem;
-            margin-bottom: 0.5rem;
-            color: #ff2a6d;
-        }
-        /* NAVIGATION & HAMBURGER */
-        .navbar {
-            background: #0d0d0d;
-            border-bottom: 2px solid #ff2a6d;
-            padding: 0.8rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        .navbar .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .navbar .logo {
-            font-size: 1.4rem;
-            font-weight: bold;
-            color: #ff2a6d;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            border: none;
-        }
-        .navbar .logo:hover {
-            color: #05d9e8;
-            border: none;
-        }
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            align-items: center;
-        }
-        .nav-links a {
-            color: #e0e0e0;
-            font-size: 0.95rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            border-bottom: 2px solid transparent;
-            padding-bottom: 4px;
-        }
-        .nav-links a:hover,
-        .nav-links a.active {
-            color: #05d9e8;
-            border-bottom-color: #05d9e8;
-        }
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            gap: 5px;
-            cursor: pointer;
-            background: none;
-            border: none;
-            padding: 5px;
-        }
-        .hamburger span {
-            width: 28px;
-            height: 3px;
-            background: #e0e0e0;
-            display: block;
-            transition: 0.3s;
-        }
-        /* FOOTER */
-        footer {
-            border-top: 2px solid #ff2a6d;
-            padding: 2rem 0;
-            text-align: center;
-            background: #0d0d0d;
-        }
-        footer p {
-            margin-bottom: 0.5rem;
-            color: #888;
-            font-size: 0.85rem;
-        }
-        footer .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            flex-wrap: wrap;
-            margin-top: 1rem;
-        }
-        footer .footer-links a {
-            color: #ff2a6d;
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            border: none;
-        }
-        footer .footer-links a:hover {
-            color: #05d9e8;
-        }
-        /* RESPONSIVE 768 */
-        @media (max-width: 768px) {
-            .navbar .container {
-                flex-wrap: wrap;
-            }
-            .nav-links {
-                display: none;
-                width: 100%;
-                flex-direction: column;
-                gap: 0.5rem;
-                padding: 1rem 0;
-                background: #0d0d0d;
-                border-top: 1px solid #ff2a6d;
-            }
-            .nav-links.show {
-                display: flex;
-            }
-            .hamburger {
-                display: flex;
-            }
-            h1 {
-                font-size: 1.6rem;
-            }
-            h2 {
-                font-size: 1.3rem;
-            }
-            .container {
-                padding: 0 12px;
-            }
-            .brutal-border {
-                padding: 1rem;
-                box-shadow: 4px 4px 0px #05d9e8;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>마곡 유흥 꿀팁 — 블로그</title>
+  <meta name="description" content="마곡 지역 유흥 정보를 체계적으로 정리한 블로그 글입니다. 조건별 추천 장소와 방문 전 체크리스트, 안전 가이드를 전문가 시각으로 제공합니다.">
+  <meta name="keywords" content="마곡 유흥, 마곡 밤문화, 마곡 클럽, 마곡 바, 마곡 파티, 마곡 나이트 가이드, 마곡 블로그">
+  <link rel="canonical" href="https://magok-night-guide.program-school.online/blog.html">
+  <meta property="og:title" content="마곡 유흥 꿀팁 — 블로그">
+  <meta property="og:description" content="전문가가 정리한 마곡 유흥 가이드. 장소 추천, 체크리스트, 안전 팁을 한눈에 확인하세요.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://magok-night-guide.program-school.online/blog.html">
+  <meta property="og:image" content="https://magok-night-guide.program-school.online/assets/og-image.jpg">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- HEADER / NAV -->
-    <header>
-        <nav class="navbar" id="navbar">
-            <div class="container">
-                <a href="/" class="logo">마곡꿀팁</a>
-                <button class="hamburger" id="hamburger" aria-label="메뉴 열기">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-                <ul class="nav-links" id="navLinks">
-                    <li><a href="/">홈</a></li>
-                    <li><a href="/blog" class="active">블로그</a></li>
-                    <li><a href="/map">맵</a></li>
-                    <li><a href="/review">리뷰</a></li>
-                    <li><a href="/contact">문의</a></li>
-                </ul>
-            </div>
-        </nav>
-    </header>
+  <header class="m-item-01ka">
+    <h1>마곡 유흥 꿀팁</h1>
+    <p>전문가가 직접 조사·정리한 최신 마곡 나이트 라이프 가이드</p>
+  </header>
 
-    <!-- MAIN BLOG CONTENT -->
-    <main>
-        <section class="container section-gap">
-            <article class="brutal-border">
-                <header>
-                    <h1>🔥 마곡 유흥 꿀팁: 브로들만 아는 3가지 시크릿</h1>
-                    <p class="text-small">2025-01-15 · by 마곡유흥꿀팁 · <a href="#comments">0 댓글</a></p>
-                </header>
-                
-                <p>마곡에서 놀아본 브로? 그럼 알겠지만 여기는 <strong>짜가</strong>가 넘쳐난다. 홍대입구? 가성비 따위 없다. 김포공항 근처? 골때리는 코스만 추천한다. 근데 너, 진짜야? 진짜 맛집, 진짜 놀거리를 원한다면 이 글을 끝까지 봐라. 내가 직접 발로 뛰고 지갑 털어서 알아낸 <u>마곡 유흥 꿀팁</u> 3개를 공개한다. 노필터, 직설, 강력 추천.</p>
+  <nav class="t-side-a3bn">
+    <ul>
+      <li><a href="/overview">전체 개요</a></li>
+      <li><a href="/zones">유흥 구역</a></li>
+      <li><a href="/checklist">방문 전 체크리스트</a></li>
+      <li><a href="/safety">안전 가이드</a></li>
+      <li><a href="/faq">FAQ</a></li>
+    </ul>
+  </nav>
 
-                <h2>1. 룸싸롱 vs 립카페: 돈값 하는 놈은?</h2>
-                <p>마곡에는 룸싸롱도 있고 립카페도 있다. 근데 솔직히 말해서 <strong>립카페</strong>가 가성비 갑이다. 이유? 기본 20만 원대로 2시간 풀코스, 음주 무제한인 곳도 있다. 룸싸롱은 간판만 번지르르하고 서비스 질은 거기서 거기. 내 추천은 <span style="color:#ff2a6d;">‘바이올렛 립’</span> – 마곡역 5번 출구에서 도보 3분. 진짜 야들만 아는 곳이다. 가격 문의는 010-6279-0862로 직통.</p>
+  <section class="v-item-99fn">
+    <h2>마곡 유흥 구역 별 특징</h2>
+    <p>마곡은 최근 재개발과 문화 시설 확충으로 다양한 유흥 옵션을 제공하는 지역으로 변모했습니다. 주요 구역은 크게 세 가지로 나뉘며, 각각의 분위기와 고객층이 뚜렷합니다.</p>
+    <p>첫 번째는 <strong>마곡 타워 주변</strong>으로, 고층 빌딩 속에 위치한 고급 라운지와 펍이 집중돼 있습니다. 이곳은 주로 비즈니스맨이나 회식 그룹이 방문하며, 품격 있는 서비스와 조용한 분위기를 선호합니다.</p>
+    <p>두 번째는 <strong>마곡역 인접 지역</strong>이며, 다양한 바와 클럽이 있어 젊은 층과 여행객에게 인기가 높습니다. 최신 사운드 시스템과 테마 파티가 자주 열리며, 주말에는 예약이 필수인 경우가 많습니다.</p>
+    <p>세 번째는 <strong>마곡 고덕동</strong>에 위치한 소규모 호프집·포장마차 거리입니다. 저렴한 가격대와 프렌들리한 분위기가 특징이며, 현지인들이 자주 찾는 숨은 명소가 다수 존재합니다.</p>
+  </section>
 
-                <h2>2. 시간대별 꿀팁: 언제 가야 제일 좋냐?</h2>
-                <p>브로, 시간이 돈이다. 마곡 유흥주점은 <strong>목요일 밤 10시~12시</strong>가 골든타임이다. 주말은 예약 없으면 X되고, 평일은 초반에만 붐빈다. 내가 자주 가는 <span style="color:#05d9e8;">‘룸살롱 마곡’</span>은 목요일이 가장 여유롭고 마담도 친절하다. 웨이팅 없이 입장하고 싶으면 <strong>30분 전 도착</strong>이 기본. 이 팁 모르면 호구다.</p>
+  <section class="v-item-99fn">
+    <h2>방문 전 체크리스트</h2>
+    <p>유흥 시설을 선택하기 전 반드시 확인해야 할 요소들을 단계별로 정리했습니다. 상황별(인원, 목적, 시간대)로 체크리스트를 활용하면 보다 안전하고 만족스러운 경험을 할 수 있습니다.</p>
+    <p><strong>인원 구성</strong>에 따라 예약 여부와 좌석 유형을 미리 결정하세요. 4인 이상 그룹은 프라이빗 룸을, 2~3인 소그룹은 바 카운터를 이용하면 효율적입니다. 또한, 동행자의 연령대와 음주 습관을 고려해 알코올 함량이 높은 메뉴는 사전에 조율하는 것이 좋습니다.</p>
+    <p><strong>시간대</strong>는 분위기와 가격에 직접적인 영향을 줍니다. 평일 저녁 6시~9시는 비교적 한산하고, 라운지 주류 가격이 낮아 가성비가 좋습니다. 반면, 주말 밤 10시 이후는 클럽 입장료가 상승하고, 대기 시간이 길어질 수 있으니 사전 예약을 권장합니다.</p>
+    <p><strong>목적</strong>에 따라 메뉴와 분위기를 매칭하세요. 회식·비즈니스 목적이라면 와인·위스키 라인업이 풍부한 고급 라운지를, 친구와의 파티·댄스 목적이라면 최신 DJ가 운영하는 클럽을 선택하는 것이 이상적입니다.</p>
+  </section>
 
-                <h2>3. 숨은 맛집: 유흥 후속 코스</h2>
-                <p>놀고 나면 배고프잖아? 마곡에서 유흥 후 <strong>진짜 야들만 가는 국밥집</strong>을 알려준다. ‘마곡할매국밥’ – 24시간 영업, 얼큰한 순대국에 소주 한 잔이면 피로 싹 간다. 위치는 마곡나루역 2번 출구에서 5분. 가격은 9,000원. 유흥값에 비하면 새발의 피다. 브로들은 여기서 막차 타기 전에 속을 데워라.</p>
+  <section class="v-item-99fn">
+    <h2>안전 가이드</h2>
+    <p>밤 시간대 외출 시 발생할 수 있는 위험 요소를 최소화하기 위한 실용적인 조언을 제공합니다. 특히 마곡은 교통 인프라가 발달했지만, 특정 지역에서의 안전 사고 발생 빈도가 높아 주의가 필요합니다.</p>
+    <p>먼저, <strong>대중교통 이용</strong>을 권장합니다. 마곡역과 마곡고속터미널은 24시간 운행이 가능하며, 늦은 시간에도 택시 호출이 용이합니다. 택시를 이용할 경우, 공식 앱을 통해 차량 번호와 기사 정보를 확인하고, 미리 요금 정보를 파악해 두세요.</p>
+    <p>두 번째로, <strong>동반자와의 위치 공유</strong>가 중요합니다. 카카오톡 ‘위치 공유’ 기능을 활용해 실시간으로 서로의 이동 경로를 확인하고, 예상 도착 시간이 크게 벗어나면 즉시 연락을 취하도록 합니다.</p>
+    <p>마지막으로, <strong>음주량 관리</strong>는 가장 기본적인 안전 수칙입니다. 1인당 2~3잔을 초과하지 않도록 스스로 제한하고, 음료를 주문할 때는 반드시 본인이 직접 수령하세요. 음주 후 귀가 시엔 절대 혼자 운전하지 않으며, 필요 시 대리운전 서비스를 미리 예약해 두는 것이 바람직합니다.</p>
+  </section>
 
-                <p>————————<br>이 정보가 유용했다면 주변 브로에게 공유해라. 혼자만 알긴 아깝다. 더 궁금한 건 전화로 물어봐. 상담은 무료, 예약은 유료. 가격, 코스, 위치 전부 내가 검증했다. 마곡에서 놀 때는 이 꿀팁이 네 지갑을 지킨다.</p>
+  <section class="q-list-gjf9">
+    <h2>자주 묻는 질문 (FAQ)</h2>
+    <dl>
+      <dt>Q1. 마곡에서 가장 접근성이 좋은 클럽은 어디인가요?</dt>
+      <dd>A1. 마곡역 근접에 위치한 ‘클럽 엑스’는 지하철 9호선 3번 출구에서 도보 5분 거리에 있어 접근성이 뛰어나며, 주중 저녁 할인 이벤트를 자주 진행합니다.</dd>
 
-                <p class="text-small" style="margin-top:2rem;border-top:1px solid #333;padding-top:1rem;">
-                    <strong
+      <dt>Q2. 주말에 인기가 많은 라운지는 어디인가요?</dt>
+      <dd>A2. 마곡 타워 28층에 위치한 ‘라운지 스카이’는 파노라마 야경과 함께 고급 와인 리스트가 강점이며, 사전 예약 시 전용 좌석을 확보할 수 있습니다.</dd>
+
+      <dt>Q3. 안전하게 귀가하려면 어떤 교통수단을 이용하는 것이 좋나요?</dt>
+      <dd>A3. 24시간 운영되는 마곡 고속터미널 셔틀버스와 카카오 T 대리운전 서비스가 가장 안전한 옵션이며, 특히 심야에는 택시보다 대리운전을 권장합니다.</dd>
+
+      <dt>Q4. 여성 혼자서도 안전하게 방문할 수 있는 장소가 있나요?</dt>
+      <dd>A4. 마곡 고덕동에 위치한 ‘소프트 바’는 조용한 분위기와 직원 친절도가 높아 여성 고객이 혼자 방문하기에 적합합니다. 단, 늦은 시간에는 인근 카페를 이용해 대기 후 이동하는 것이 안전합니다.</dd>
+    </dl>
+  </section>
+
+  <footer class="m-item-01ka">
+    <p>© 2026 마곡 나이트 가이드. 모든 권리 보유.</p>
+  </footer>
 </body>
 </html>
